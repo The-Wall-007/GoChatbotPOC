@@ -1,0 +1,28 @@
+Here are some sample training phrases for a car booking intent:
+
+Training Phrases:
+
+- General Booking Requests:
+
+"I want to book a car."
+"Can I rent a car?"
+"I'd like to book a ride."
+"I need a car for tomorrow."
+"Help me book a cab."
+"Can you arrange a car for me?"
+"Book a car for me."
+"I need a car right now."
+"I want to reserve a car."
+
+- Training Phrases(I am delighted to hear that you are traveling! Where will you be landing and when should we have your vehicle ready?):
+
+I will be landing in city on date, and need the vehicle by then.
+I’m arriving at airport on date, can you have the car ready by then?
+I’ll need the vehicle on date at airport when I land.
+My flight arrives in city on date, please have the car ready by that time.
+I will be landing at airport on date, and need the car right after.
+I’m arriving in city on date, when can the car be ready?
+I’m landing at airport on date, please schedule my vehicle pick-up for then.
+I’ll be in city on date and would like to have the vehicle ready at time.
+I’ll need the vehicle on date after I land at airport.
+My arrival in city is on date, and I’ll need the car by then.
