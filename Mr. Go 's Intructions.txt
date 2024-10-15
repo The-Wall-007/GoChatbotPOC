@@ -1,0 +1,25 @@
+For Explore:
+
+1. Select "Reserve a vehicle"
+
+2. Type "I will landing in Ahmedabad on 11th November at 12:30PM"
+
+3. Select "Lexus RX"
+
+
+
+For Home:
+
+1. Type "Hello"
+
+2. Type "Reserve a vehicle"
+
+3. Type "I will landing in LAX on 11th November at 12:30PM"
+
+4. Type number of passengers "3"
+
+5. Type car preference "SUV"
+
+6. Type "I will return the car on 12th November at 11 AM at the LAX" || "I will return the car at the LAX"
+
+7. Type "12th November at 11 AM"
