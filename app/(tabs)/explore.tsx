@@ -325,7 +325,6 @@ const Explore = () => {
   };
 
   const renderBubble = (props: BubbleProps<CustomMessage>) => {
-    console.log(props.currentMessage.data?.cars);
     if (props.currentMessage.data?.cars) {
       return (
         <View>

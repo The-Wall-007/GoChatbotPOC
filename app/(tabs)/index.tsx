@@ -1,70 +1,146 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { useEffect, useState } from "react";
+import { StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { User, GiftedChat, IMessage } from "react-native-gifted-chat";
+import { Dialogflow_V2 } from "react-native-dialogflow";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { HelloWave } from "@/components/HelloWave";
+import { dialogflowConfig2 } from "@/env";
+
+// Bot user data
+const GoBOT: User = {
+  _id: 2,
+  name: "Mr. Go",
+  avatar: require("@/assets/images/MrBot.jpg"),
+};
 
 export default function HomeScreen() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const [messages, setMessages] = useState<IMessage[]>([]);
+
+  useEffect(() => {
+    Dialogflow_V2.setConfiguration(
+      dialogflowConfig2.client_email,
+      dialogflowConfig2.private_key,
+      Dialogflow_V2.LANG_ENGLISH_US,
+      dialogflowConfig2.project_id
+    );
+
+    setIsLoading(false);
+  }, []);
+
+  const processVehicleAddIntent = (parameters: any) => {
+    const location = parameters["place-types"];
+    const carPreference = parameters["vehicle-types"];
+    const arrivalTime = parameters["date-time"]?.date_time;
+    const passengers = parameters["number"];
+
+    if (arrivalTime && location && carPreference && passengers) {
+      alert(
+        "Reserve request data:" +
+          JSON.stringify({
+            location,
+            arrivalTime,
+            carPreference,
+            passengers,
+          })
+      );
+    }
+  };
+
+  const processVehicleReturnIntent = (parameters: any) => {
+    const departureTime = parameters["date-time"]?.date_time;
+    const location = parameters["place-types"];
+
+    if (departureTime && location) {
+      alert(
+        "Return request data:" +
+          JSON.stringify({
+            location,
+            departureTime,
+          })
+      );
+    }
+  };
+
+  const handleIntent = (intentName: string, parameters: any) => {
+    if (intentName === "Vehicle.add") {
+      processVehicleAddIntent(parameters);
+    } else if (intentName === "Vehicle.return") {
+      processVehicleReturnIntent(parameters);
+    }
+  };
+
+  const onSend = (newMessages: IMessage[] = []) => {
+    // Update the messages state with the new message
+    setMessages((previousMessages) =>
+      GiftedChat.append(previousMessages, newMessages)
+    );
+
+    const messageText = newMessages[0]?.text;
+
+    if (messageText) {
+      Dialogflow_V2.requestQuery(
+        messageText,
+        (result: any) => {
+          const botResponse =
+            result?.queryResult?.fulfillmentMessages?.[0]?.text?.text?.[0] ||
+            "Sorry, I didn't understand that.";
+
+          const intentName = result?.queryResult?.intent?.displayName;
+          const parameters = result?.queryResult?.parameters;
+
+          // Handle the intent-based logic
+          handleIntent(intentName, parameters);
+
+          // Create a response message from the bot
+          const botMessage: IMessage = {
+            _id: Math.random().toString(), // Generate a unique ID
+            text: botResponse,
+            createdAt: new Date(),
+            user: GoBOT, // Bot user
+          };
+
+          // Update the chat with the bot's response
+          setMessages((previousMessages) =>
+            GiftedChat.append(previousMessages, [botMessage])
+          );
+        },
+        (error) => console.error("Dialogflow error: ", error)
+      );
+    }
+  };
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <SafeAreaView style={styles.container}>
+      {isLoading ? (
+        <View
+          style={{
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <HelloWave />
+        </View>
+      ) : (
+        <GiftedChat
+          messages={messages}
+          user={{
+            _id: 1, // Current user ID
+          }}
+          onSend={(messages) => onSend(messages)}
+          renderAvatarOnTop
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      )}
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
   },
 });

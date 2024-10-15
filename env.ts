@@ -13,3 +13,19 @@ export const dialogflowConfig = {
     "https://www.googleapis.com/robot/v1/metadata/x509/mr-go-poc%40mr-go-iwdv.iam.gserviceaccount.com",
   universe_domain: "googleapis.com",
 };
+
+export const dialogflowConfig2 = {
+  type: "service_account",
+  project_id: "mr-go-app-vxdk",
+  private_key_id: "8b601cecfc9198e1b14711700bc5b76d7b58d40d",
+  private_key:
+    "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDbn4jxtTmyTF4i\ngj3gw+UvhI9eaZIexECTqYefYjV4yO7+YGNwcLhh8q8Uc07UqUjOrF7qMm0pBb6r\nQFI3CRoMh9TkHogSgPXAB93O3hZASrPzefJ4f1wxK5xDMauPobFsDcEMgxZC5gAX\nKe12UYPu/2CkBDsWTk5oX8HB6H9VGtXgrerOgcfiaBSXf83bDKeFIA8m5PvYkq4e\nKDmsA9izjdIBkFinjQzpzdTwPL3mY+jBHmuskFySvG9J592np7sBcQmoqnxSLscc\nzz2vitp0a5avCtTUwCNErrkV2crrrzoQgerbDxx3ppFMZQWSyf/MCJZchzkSmVHK\nxQgao651AgMBAAECggEAAUw/n6PBPRoRkqCiHvpXF/OB4D49d9DKgp4FbLmNtMTg\n7K3ntj6I2rEKBUGhwcTSVJwL34tJB0jjjI/PvtoV6uTA4genBDPVds15q16SnISm\nx97YL9Stal2K5UkLJKSTix6jZvv0eLkFOtSrmUj4CMSHk4dpKEOWfHVqHrVfvGbc\nGuhkbBiRraYYyAl+mwtoVts9k6SqleEhik71bXNpWlkUEDONySeCfOYxMPkdPkUL\nUMfb8HRw/woWDwWj9O5NW63m9vQjOPkKK4q+8lVeAoaQbPNjQ3sU2cmEYqvWe+hw\nWSAGl4NhOJW+MSsXcFIKynfjcYb/kt12rhEEdQANYQKBgQD3aMGqS//iOCH0mHEU\n/d2IBBRhs+bsmIR3gsK/zBM1IVMo29FBUyaWbpG5mUGnfw4/B1sjAvzb65l/GHEG\nyaWedKzAZav/zLzJ4f4i+itUgwPdzX1prExgsXFkmlfKB8Ic+Oi9vFTkQYlgduNB\nG+7vu4o5vFU8BbGyy7HY3DC0TQKBgQDjP8kwas+q+XXn0PtpR+GgIdrCfVBAXu7G\nIjIvqlDN2JPom8D8/NtqN+3DsZ7gCppmIo8nl9rgdwRfXEBF0pmTQsAVU3Om8Rxv\ne77vH67OcRKsQ8nmqkEdgPXTplNw9UIGn2zK1vqzv9EiETAoASlFjVpxOFA7158d\nv7k5bkWWyQKBgQDqQ6f1P2c4ZdxJBTs2HDdyfiJqbPVAnB36J7eN8odRbI+YhaO7\nTiegk2uqqOIQ3m634Zg7K64P8yLxxEvpmHAY/PNCbkMRwGQWaMXBis4ShMfZcqTI\ntZvQhtQO5VIw+22jD1EZr0VWqHOTAp+mW/O/zf1RM/IlFmMvIE7zP3NilQKBgAes\nbrnA0ZRfahjS2Lp8X+UNX5qzqpMR4ZQ1MWakpKfeyVfQcprYWvxiORgjlk7QbNhI\nEHdwzEZKHo6tycnRy7fKSDwwHjaj66bkEdV3R2rXLJ8+hsHQO/SoFyT3d9fXoEwi\n9ASBb+PD9WbmF68yItejZ0ttcGAk7s2NXM7Qp27pAoGAaQhWG2DosbIZim+XWh3z\nG9b9Z6gd1WNHXUywEU/lSBLpQCRk+Nu1hFPy30WYij4Wv92spjCsbny5CYrZMiGI\nBZ62V2rw13SWOgiyMdVNFNrh2Jm7uQcfSy1+zeuUJT5NDtfAZNFP6RgXdJuw03Ab\nfqKz6wDg+tJZxsj00qN+TdI=\n-----END PRIVATE KEY-----\n",
+  client_email: "mr-go-app@mr-go-app-vxdk.iam.gserviceaccount.com",
+  client_id: "104338566267613578168",
+  auth_uri: "https://accounts.google.com/o/oauth2/auth",
+  token_uri: "https://oauth2.googleapis.com/token",
+  auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+  client_x509_cert_url:
+    "https://www.googleapis.com/robot/v1/metadata/x509/mr-go-app%40mr-go-app-vxdk.iam.gserviceaccount.com",
+  universe_domain: "googleapis.com",
+};
