@@ -1,0 +1,195 @@
+{
+  "id": "98869a00-4297-4b50-b032-281616228c31",
+  "name": "Booking Requests",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "BookingRequests-followup",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "date-time",
+          "dataType": "@sys.date-time",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "$date-time",
+          "outputDialogContexts": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": [
+            "I am delighted to hear that you are traveling! Where will you be landing and when should we have your vehicle ready?"
+          ]
+        },
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Reserve a vehicle.",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "d1dc24dd-241c-4631-9afa-91d5acb4629e",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I want to reserve a car.",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "80185bb2-ae58-48ff-8451-dc208b89a3cc",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I need a car right now.",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "d80d39bb-5639-4d17-b34e-b601e0ea7fb8",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Book a car for me.",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "7246e8ae-847b-4b40-a9fc-7d63319ea17d",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Can you arrange a car for me?",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "7cb20d99-0b9b-4560-8ec2-a200afb94187",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Help me book a cab.",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "e24c3bb9-4e8b-4934-9f0c-86f09d9e6dbe",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I need a car for ",
+          "userDefined": false
+        },
+        {
+          "text": "tomorrow",
+          "userDefined": false,
+          "alias": "date-time",
+          "meta": "@sys.date-time"
+        },
+        {
+          "text": ".",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "1b28ff7e-7a72-4d08-a806-99459dca3c9d",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I'd like to book a ride.",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "c5cc230b-711d-4ebb-9c8f-b892bd852e2e",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Can I rent a car?",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "e9d6da59-d6d7-48f7-ae79-555766b44546",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I want to book a car.",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "ed23c1a2-fa66-48e7-afb1-7af3f757d79b",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

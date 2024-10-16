@@ -1,0 +1,186 @@
+{
+  "id": "0af4630d-fa5b-4443-ae7b-38fbce407150",
+  "name": "Vehicle.return",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "date-time",
+          "dataType": "@sys.date-time",
+          "isList": false,
+          "required": true,
+          "prompts": [
+            "Where do you plan to return the vehicle? (e.g. November 12th at 10 PM)",
+            "What location will you be dropping off the vehicle at? (e.g. November 12th at 10 PM)",
+            "Can you specify where you intend to return the vehicle? (e.g. November 12th at 10 PM)"
+          ],
+          "value": "$date-time",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "place-types",
+          "dataType": "@place-types",
+          "isList": false,
+          "required": true,
+          "prompts": [
+            "Where do you plan to return the vehicle? (e.g. LAX)"
+          ],
+          "value": "$place-types",
+          "outputDialogContexts": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": [
+            "Excellent, give me a short moment to prepare your reservation."
+          ]
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I will return the car on ",
+          "userDefined": false
+        },
+        {
+          "text": "12th November at 11 AM",
+          "userDefined": false,
+          "alias": "date-time",
+          "meta": "@sys.date-time"
+        },
+        {
+          "text": " at the ",
+          "userDefined": false
+        },
+        {
+          "text": "LAX",
+          "userDefined": false,
+          "alias": "place-types",
+          "meta": "@place-types"
+        }
+      ],
+      "count": 0,
+      "id": "9223edfa-1cdc-4d37-b71f-0006a535c5f1",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "The vehicle will be dropped off on ",
+          "userDefined": false
+        },
+        {
+          "text": "18th October at 3 PM",
+          "userDefined": false,
+          "alias": "date-time",
+          "meta": "@sys.date-time"
+        },
+        {
+          "text": " at the ",
+          "userDefined": false
+        },
+        {
+          "text": "LAX",
+          "userDefined": false,
+          "alias": "place-types",
+          "meta": "@place-types"
+        }
+      ],
+      "count": 0,
+      "id": "bb55428d-3f2b-4463-a41f-a7b74d5e3781",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I will drop off the car at the ",
+          "userDefined": false
+        },
+        {
+          "text": "LAX",
+          "userDefined": false,
+          "alias": "place-types",
+          "meta": "@place-types"
+        },
+        {
+          "text": " on ",
+          "userDefined": false
+        },
+        {
+          "text": "15th November around 2 PM",
+          "userDefined": false,
+          "alias": "date-time",
+          "meta": "@sys.date-time"
+        }
+      ],
+      "count": 0,
+      "id": "1f7f0ab8-273f-40a8-9420-7f4de273d538",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I plan to return the vehicle on ",
+          "userDefined": false
+        },
+        {
+          "text": "10th October at 4 PM",
+          "userDefined": false,
+          "alias": "date-time",
+          "meta": "@sys.date-time"
+        },
+        {
+          "text": " at the ",
+          "userDefined": false
+        },
+        {
+          "text": "LAX",
+          "userDefined": true,
+          "alias": "place-types",
+          "meta": "@place-types"
+        }
+      ],
+      "count": 0,
+      "id": "399249ab-7cc9-43cc-a656-fea1ed1b3be9",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

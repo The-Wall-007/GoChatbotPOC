@@ -1,0 +1,118 @@
+{
+  "id": "f47fafc4-e782-41b0-81ff-14ce988f619b",
+  "name": "Reserve.a.vehicle",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "ongoing-booking",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": [
+            "I am delighted to hear that you are traveling! Where will you be landing and when should we have your vehicle ready?"
+          ]
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Schedule a vehicle reservation",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f57681c9-dbe9-497a-8787-d8774bf6f1c6",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Set up a vehicle reservation",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "55393bad-be4b-4657-9e50-be9a72e82416",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Arrange for a vehicle",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "5b1050de-a0e4-43c9-b6bf-f1aabb6665ed",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Make a vehicle booking",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "006334f0-effc-46e9-b27c-3226c2bc60ec",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Book a vehicle",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "7adefab2-3795-4501-a718-c403737d55a5",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Reserve a vehicle",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "5b60dad3-066e-4687-b909-81fda6130939",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

@@ -1,0 +1,243 @@
+{
+  "id": "9e3514b5-dcc6-4599-a953-9821260d9051",
+  "name": "Vehicle.add",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [
+    "ongoing-booking"
+  ],
+  "contexts": [
+    "ongoing-booking"
+  ],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "ongoing-booking",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "date-time",
+          "dataType": "@sys.date-time",
+          "isList": false,
+          "required": true,
+          "prompts": [
+            "To assist you better, could you please specify your arrival date and time? For example, you could say 'October 10 at 10:30 PM'."
+          ],
+          "value": "$date-time",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "number",
+          "dataType": "@sys.number",
+          "isList": false,
+          "required": true,
+          "prompts": [
+            "How many members will be traveling with you? This will help us select the appropriate vehicle."
+          ],
+          "value": "$number",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "vehicle-types",
+          "dataType": "@vehicle-types",
+          "isList": false,
+          "required": true,
+          "prompts": [
+            "What type of vehicle would you prefer? Please specify the car type (e.g., SUV, sedan) you would like."
+          ],
+          "value": "$vehicle-types",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "place-types",
+          "dataType": "@place-types",
+          "isList": false,
+          "required": true,
+          "prompts": [
+            "Please specify your location (e.g., LAX) to ensure accurate pickup."
+          ],
+          "value": "$place-types",
+          "outputDialogContexts": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": [
+            "The $vehicle-types is a perfect choice. It will be prepared for you upon your arrival. \n\nWhen and where do you plan on returning your vehicle?"
+          ]
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Tomorrow 10 PM",
+          "userDefined": true,
+          "alias": "date-time",
+          "meta": "@sys.date-time"
+        },
+        {
+          "text": ", ",
+          "userDefined": false
+        },
+        {
+          "text": "Ahmedabad Airport",
+          "userDefined": true,
+          "alias": "place-types",
+          "meta": "@place-types"
+        }
+      ],
+      "count": 0,
+      "id": "3ef0aebd-5f79-434e-8a58-242133dc6880",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I'm landing at ",
+          "userDefined": false
+        },
+        {
+          "text": "Heathrow Airport",
+          "userDefined": true,
+          "alias": "place-types",
+          "meta": "@place-types"
+        },
+        {
+          "text": " on ",
+          "userDefined": false
+        },
+        {
+          "text": "February 22 at 6:45 AM.",
+          "userDefined": false,
+          "alias": "date-time",
+          "meta": "@sys.date-time"
+        }
+      ],
+      "count": 0,
+      "id": "38f59275-a5d8-4538-b278-fb777feaf027",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I'll be arriving at ",
+          "userDefined": false
+        },
+        {
+          "text": "Dallas",
+          "userDefined": true,
+          "alias": "place-types",
+          "meta": "@place-types"
+        },
+        {
+          "text": " International Airport on ",
+          "userDefined": false
+        },
+        {
+          "text": "January 8 at 3:30 PM",
+          "userDefined": false,
+          "alias": "date-time",
+          "meta": "@sys.date-time"
+        }
+      ],
+      "count": 0,
+      "id": "41548081-5747-4ddd-921c-9767066c1d0b",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I am landing at ",
+          "userDefined": false
+        },
+        {
+          "text": "LAX",
+          "userDefined": true,
+          "alias": "place-types",
+          "meta": "@place-types"
+        },
+        {
+          "text": " on ",
+          "userDefined": false
+        },
+        {
+          "text": "Oct 10, 2024 at 10:30PM",
+          "userDefined": false,
+          "alias": "date-time",
+          "meta": "@sys.date-time"
+        },
+        {
+          "text": ". I would like a ",
+          "userDefined": false
+        },
+        {
+          "text": "large black SUV",
+          "userDefined": true,
+          "alias": "vehicle-types",
+          "meta": "@vehicle-types"
+        },
+        {
+          "text": " to accommodate my family of ",
+          "userDefined": false
+        },
+        {
+          "text": "4",
+          "userDefined": false,
+          "alias": "number",
+          "meta": "@sys.number"
+        },
+        {
+          "text": ".",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "33fa6907-f394-4cf7-ab7f-ff3952f6fee9",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

@@ -1,4 +1,4 @@
-For Explore:
+For Mr-Go:
 
 1. Select "Reserve a vehicle"
 
@@ -8,7 +8,7 @@ For Explore:
 
 
 
-For Home:
+For Mr-Go-App:
 
 1. Type "Hello"
 
